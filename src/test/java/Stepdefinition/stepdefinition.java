@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-
-import Runnerclass.runnerclass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -51,8 +49,9 @@ public class stepdefinition {
 		   
 	}
 	@When("user navigates to the settings page")
-	public void userNavigatesToTheSettingsPage() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	public void userNavigatesToTheSettingsPage() throws InterruptedException {
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		Thread.sleep(10000);
 		WebElement element = driver.findElement(By.xpath("//*[text()='Settings']"));
 		Actions ac = new Actions(driver);
 		ac.moveToElement(element).perform();
@@ -64,7 +63,7 @@ public class stepdefinition {
 	@When("user uploads the students data in excel format")
 	public void userUploadsTheStudentsDataInExcelFormat() {
 		driver.findElement(By.id("fileInput"))
-		.sendKeys("C:\\Users\\vishnupriya\\Downloads\\vishnu_digri.xlsx");
+		.sendKeys("/Users/gmx/Downloads/mailslurp.xlsx");
 		
 	
 		 
