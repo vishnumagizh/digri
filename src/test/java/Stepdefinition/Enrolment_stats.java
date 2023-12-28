@@ -93,7 +93,7 @@ public class Enrolment_stats {
 
 		assert number == count1 : "Values are  equal";
 
-		System.out.println("Assertion passed!");
+		System.out.println("Assertion passed!!");
 
 	}
 
